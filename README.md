@@ -10,7 +10,7 @@
 The goal of this project is to predict the genres of songs based on user's top songs.
 
 ## Project Description
-This project utilizes a user's Spotify data to retrieve the discography of each artist in the user's most played songs and then predicts the genre of each song. This may be used in creating recommendations to users based on genre.
+This project utilizes a user's Spotify data to retrieve the discography of each artist in the user's top artists and then predicts the genre of each song. This may be used in creating recommendations to users based on genre.
 
 ## Initial Questions
 1. 
