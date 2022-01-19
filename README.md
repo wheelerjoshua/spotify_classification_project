@@ -24,8 +24,8 @@ This project utilizes a user's Spotify data to retrieve the discography of each 
 ### Acquire
 Acquisition is performed using credentials acquired from Spotify's developer platform and spotipy's modules to make acquisition easier. Data is pulled from a user's top artists of all timeframes, then the artist's discography is acquired and stored in a dataframe. The song ID is used to read Spotify's track features and used to create a dataframe containing all song information.
 
-### Prepartion
-Upon acquisition, it appears the only further preparation is simplifying the genre data.
+### Prepare
+Upon acquisition, there are numerous duplicates in the data. These are dropped and the genres column is extracted and simplified.
 
 ### Wrangle
 Compile acquire and prepare modules and include a split function
