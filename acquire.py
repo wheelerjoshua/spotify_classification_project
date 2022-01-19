@@ -230,6 +230,10 @@ def get_spotify_top_artists_discography_data():
         artist_uri = []
         for a in short_data['items']:
             artist_uri.append(a['uri'])
+        for a in medium_data['items']:
+            artist_uri.append(a['uri'])
+        for a in long_data['items']:
+            artist_uri.append(a['uri'])
 
         # pull the discography for each artist
         discographies = []
@@ -247,14 +251,14 @@ def get_spotify_top_artists_discography_data():
         for a in album_uris:
             song_list.append(sp.album(a))
 
-        # Create dataframe from song list
+        # create dataframe of features
         artist_name = []
         artist_uri = []
         song_name = []
         song_uri = []
         album_name = []
         album_uri = []
-        genre = []
+        popularity = []
         for album in song_list:
             for song in album['tracks']['items']:
                 artist_name.append(song['artists'][0]['name'])
@@ -263,13 +267,16 @@ def get_spotify_top_artists_discography_data():
                 song_uri.append(song['uri'])
                 album_name.append(album['name'])
                 album_uri.append(album['uri'])
+                popularity.append(album['popularity'])
+
 
         df = pd.DataFrame({'artist':artist_name,
         'song':song_name,
         'album':album_name,
         'song_uri':song_uri,
         'album_uri':album_uri,
-        'artist_uri':artist_uri})
+        'artist_uri':artist_uri,
+        'popularity':popularity})
 
         # drop duplicates of song list
         df.drop_duplicates(inplace=True)
@@ -288,18 +295,18 @@ def get_spotify_top_artists_discography_data():
         # merge audio features data with songs dataframe
         df = pd.merge(df,audio_features_df,how='right',left_on='song_uri',right_on='uri')
 
-        # get genres
-        artist_data = []
-        for a in artist_uri:
-            artist_data.append(sp.artist(a))
-        # create dataframe of artist data
-        artist_data_df = pd.DataFrame.from_dict(artist_data)
+        # # get genres
+        # artist_data = []
+        # for a in artist_uri:
+        #     artist_data.append(sp.artist(a))
+        # # create dataframe of artist data
+        # artist_data_df = pd.DataFrame.from_dict(artist_data)
 
-        # merge genres onto dataframe
-        df = pd.merge(df,artist_data_df,how='left',left_on='artist_uri',right_on='uri')
+        # # merge genres onto dataframe
+        # df = pd.merge(df,artist_data_df,how='left',left_on='artist_uri',right_on='uri')
 
         # drop unneccessary columns
-        df.drop(columns = ['song_uri','album_uri','artist_uri','type','id','uri_x','track_href','analysis_url','uri_y'],inplace=True)
+        df.drop(columns = ['song_uri','album_uri','artist_uri','type','id','track_href','analysis_url','uri'],inplace=True)
         # write to csv
         df.to_csv('spotify_top_artist_discography_data.csv')
 

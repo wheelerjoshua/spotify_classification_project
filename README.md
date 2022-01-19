@@ -7,10 +7,10 @@
 ### Next Steps
 
 ## Project Goal
-The goal of this project is to predict the genres of songs based on user's top songs.
+The goal of this project is to predict the popularity of songs based on user's top artists.
 
 ## Project Description
-This project utilizes a user's Spotify data to retrieve the discography of each artist in the user's top artists and then predicts the genre of each song. This may be used in creating recommendations to users based on genre.
+This project utilizes a user's Spotify data to retrieve the discography of each artist in the user's top artists and then predicts the popularity of each song.
 
 ## Initial Questions
 1. 
@@ -25,7 +25,7 @@ This project utilizes a user's Spotify data to retrieve the discography of each 
 Acquisition is performed using credentials acquired from Spotify's developer platform and spotipy's modules to make acquisition easier. Data is pulled from a user's top artists of all timeframes, then the artist's discography is acquired and stored in a dataframe. The song ID is used to read Spotify's track features and used to create a dataframe containing all song information.
 
 ### Prepare
-Upon acquisition, there are numerous duplicates in the data. These are dropped and the genres column is extracted and simplified.
+Upon acquisition, duplicates are dropped. A duration_minutes column is created from duration_ms and the latter is dropped. The data is ready to be scaled.
 
 ### Wrangle
 Compile acquire and prepare modules and include a split function
