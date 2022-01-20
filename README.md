@@ -1,10 +1,14 @@
-# About this project
+# Executive Summary
+## Goal
+The goal of this project is to predict the popularity of songs based on user's top artists.
+## Key Findings (application to business)
 
-## Executive Summary
-### Goal
-### Key Findings (application to business)
-### Recommendations
-### Next Steps
+## Recommendations
+
+## Next Steps
+
+
+# About this project
 
 ## Project Goal
 The goal of this project is to predict the popularity of songs based on user's top artists.
@@ -31,26 +35,23 @@ Upon acquisition, duplicates are dropped. A duration_minutes column is created f
 Compile acquire and prepare modules and include a split function
 
 ### Exploratory Data Analysis
-#### Scale data
-Scale data for clustering purposes.
 
 #### Compare audio features
-Use visualizations to compare audio features to each other and identify drivers of genre
+Use visualizations to compare audio features to each other and identify drivers of popularity
 
-#### Examine potential for clusters
-Explore relationships of audio features to each other and how they may be clustered
-
-#### Encode clusters
-If clusters are found useful, encode them for modeling
+#### Cluster
+Scale data for clustering purposes.
+Explore relationships of audio features to each other and how they may be clustered.
+If clusters are found useful, encode them for modeling.
 
 #### Statistical tests
-Perform statistical Tests to find relationship between genre and features/clusters.
+Perform statistical tests to find relationship between genre and features/clusters.
 
-### Model
+### Regression Models
 - Evaluate a baseline
 - Create models
 - Evaluate on train and validate
-- Top performer evaluated on Test
+- Top performer evaluated on test
 
 
 ## Steps to Reproduce

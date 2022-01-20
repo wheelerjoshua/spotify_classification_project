@@ -154,6 +154,7 @@ def get_spotify_top_artists_discography_data():
         df.to_csv('spotify_top_artist_discography_data.csv')
     
     df = convert_duration(df)
+    # drop str columns for ease of modeling
     cols = ['song','album','artist']
     df = drop_cols(df, cols)
     return df
@@ -165,7 +166,7 @@ def convert_duration(df):
     '''
     Takes in a df and converts duration in milliseconds to duration in minutes.
     '''
-    df['duration_minutes'] = df.duration_ms * 60000
+    df['duration_minutes'] = round(df.duration_ms / 60000).astype(int)
     df.drop(columns = 'duration_ms', inplace = True)
     return df
 
