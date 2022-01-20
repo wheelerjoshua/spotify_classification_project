@@ -154,7 +154,8 @@ def get_spotify_top_artists_discography_data():
         df.to_csv('spotify_top_artist_discography_data.csv')
     
     df = convert_duration(df)
-
+    cols = ['song','album','artist']
+    df = drop_cols(df, cols)
     return df
 
 
@@ -166,6 +167,13 @@ def convert_duration(df):
     '''
     df['duration_minutes'] = df.duration_ms * 60000
     df.drop(columns = 'duration_ms', inplace = True)
+    return df
+
+def drop_cols(df, cols):
+    '''
+    Takes in a dataframe and drops specified columns
+    '''
+    df = df.drop(columns=cols)
     return df
 
 def standard_scaler(train, validate, test):
