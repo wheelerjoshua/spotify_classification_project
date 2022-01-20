@@ -157,6 +157,7 @@ def get_spotify_top_artists_discography_data():
     # drop str columns for ease of modeling
     cols = ['song','album','artist']
     df = drop_cols(df, cols)
+    df = df[df.duration_minutes < 9]
     return df
 
 
