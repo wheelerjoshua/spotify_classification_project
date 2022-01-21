@@ -25,6 +25,26 @@ This project utilizes a user's Spotify data to retrieve the discography of each 
 4. Does a song's key and mode correlate with popularity?
 
 ## Data Dictionary
+| variable      | meaning       |
+| ------------- |:-------------:|
+|popularity|target value: Popularity of the artist, calculated by popularity of all artist's tracks|
+|lm|Ordinary Least Squares Linear Regression modeling algorithm|
+|lm2|Polynomial Regression modeling algorithm |
+|glm|TweedieRegressor modeling algorithm|
+|Audio Features|
+|acousticness|confidence measure of whether the track is acoustic|
+|danceability|how suitable a track is for dancing|
+|duration_minutes|duration of track in minutes, rounded to the nearest whole minute|
+|energy|perceptual measure of intensity and activity|
+|instrumentalness|predicts whether a track contains no vocals|
+|key|the key the track is in|
+|liveness|presence of an audience in the recording|
+|loudness|overall loudness of a track in decibels|
+|mode|indicates modality, with 1 being major and 0 being minor|
+|speechiness|presence of spoken words in a track, with 1 being a talk show or podcast|
+|tempo|overall estimated pace of a track in beats per minute|
+|time_signature|estimated meter of beats in a bar, ranging from 3/4 to 7/4|
+|valence|measure of how positive a song sounds|
 
 ## The Plan
 ### Acquire
