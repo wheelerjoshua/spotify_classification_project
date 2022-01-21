@@ -105,3 +105,7 @@ Functions to acquire Spotify data and store in a dataframe
 Functions to acquire, prepare, and split data to store in train, validate, and test datasets.
 - viz.py
 Functions to create visualizations
+
+### Included Files
+spotify_top_artist_discography_data.csv
+- necessary for wrangling data.
