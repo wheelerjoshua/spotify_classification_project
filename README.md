@@ -5,10 +5,10 @@ The goal of this project is to predict the popularity of songs based on user's t
 Strictly analyzing audio features, features that matter the most are danceability, loudness, and modality.
 
 ## Recommendations
-When looking at top artist popularity per user, including a more broad generic dataset will provide consistency and variety in modeling.
+When looking at top artist popularity per user, including Spotify's top 100 artists in the dataset will provide consistency and variety in modeling, with a better reference for what is popular.
 
 ## Next Steps
-Acquire more data from Spotify to diversify the dataset, building a model from the diverse dataset to apply to user's top artists.
+Acquire data on Spotify's top 100 artists and their songs, building a model with a more clear reference for what is popular before deploying the model to top artists of specific users.
 
 # About this project
 
@@ -97,3 +97,11 @@ What did I do to get here?
 - Visualize residuals for models.
 - Evaluate top model on test dataset.
 - Conclude with key takeaways, recommendations, and next steps.
+
+### Modules
+- acquire.py
+Functions to acquire Spotify data and store in a dataframe
+- wrangle.py
+Functions to acquire, prepare, and split data to store in train, validate, and test datasets.
+- viz.py
+Functions to create visualizations
