@@ -19,13 +19,13 @@ from sklearn.model_selection import train_test_split
 import sklearn.preprocessing
 
 ## env
-from env import client_id, client_secret, redirect_uri
+# from env import client_id, client_secret, redirect_uri
 
 
 
-os.environ['SPOTIPY_CLIENT_ID'] = client_id
-os.environ['SPOTIPY_CLIENT_SECRET'] = client_secret
-os.environ['SPOTIPY_REDIRECT_URI'] = redirect_uri
+# os.environ['SPOTIPY_CLIENT_ID'] = client_id
+# os.environ['SPOTIPY_CLIENT_SECRET'] = client_secret
+# os.environ['SPOTIPY_REDIRECT_URI'] = redirect_uri
 
 ####### Acquire #######
 def get_spotify_top_artists_discography_data():
