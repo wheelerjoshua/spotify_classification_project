@@ -24,7 +24,7 @@ def beat_cluster(X_train_beat_cluster, centroids):
     x = X_train_beat_cluster.energy
     y = X_train_beat_cluster.tempo
     z = X_train_beat_cluster.danceability
-    ax.scatter(x,y,z, c=X_train_beat_cluster.beat_cluster, s = 40, cmap='ocean')
+    ax.scatter(x,y,z, c=X_train_beat_cluster.beat_cluster, s = 40, cmap='winter')
     ax.set_xlabel('energy', fontsize = 15)
     ax.set_ylabel('tempo',fontsize = 15)
     ax.set_zlabel('danceability',fontsize = 15)
@@ -53,7 +53,7 @@ def ambience_cluster(X_train_ambience_cluster, centroids):
     x = X_train_ambience_cluster.acousticness
     y = X_train_ambience_cluster.instrumentalness
     z = X_train_ambience_cluster.loudness
-    ax.scatter(x,y,z, c=X_train_ambience_cluster.ambience_cluster, s = 40, cmap='ocean')
+    ax.scatter(x,y,z, c=X_train_ambience_cluster.ambience_cluster, s = 40, cmap='winter')
     ax.set_xlabel('acousticness', fontsize = 15)
     ax.set_ylabel('instrumentalness',fontsize = 15)
     ax.set_zlabel('loudness',fontsize = 15)
