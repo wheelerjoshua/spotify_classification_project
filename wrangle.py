@@ -7,10 +7,10 @@ import pandas as pd
 import numpy as np
 
 ## Spotipy modules
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-from spotipy.oauth2 import SpotifyOAuth
-import spotipy.util as util
+# import spotipy
+# from spotipy.oauth2 import SpotifyClientCredentials
+# from spotipy.oauth2 import SpotifyOAuth
+# import spotipy.util as util
 
 ## Split data module
 from sklearn.model_selection import train_test_split
